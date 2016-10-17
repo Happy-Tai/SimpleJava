@@ -1,0 +1,22 @@
+Git
+git init
+git add .
+git commit –m "First Commit."
+
+git branch –a//有哪些分支，可以使用
+git branch version1.0
+git checkout version1.0//代码切换到分支上
+//，如果我们
+在version1.0 分支上修复了一个bug，在master 分支上这个bug 仍然是存在的。这时将修改
+的代码一行行复制到master 分支上显然不是一种聪明的做法，最好的办法就是使用merge命令来完成合并操作
+git checkout master
+git merge version1.0//version1.0 分支上修改并提交的内容合并到master 分支上了
+
+git branch -D version1.0//这个分支删除
+
+git clone https://github.com/exmaple/test.git //代码下载到本地
+git push origin master //把本地修改的内容同步到远程版本库上，借助push 命令来完成
+其中origin 部分指定的是远程版本库的Git 地址，master 部分指定的是同步到哪一个分支上
+git fetch origin master  //远程版本库上的代码同步到本地，（并不会自动merge）
+git merge origin/master //调用merge 命令将origin/master 分支上的修改合并到主分支上即可
+git pull origin master  //从远处版本库上获取最新的代码并且合并到本地
